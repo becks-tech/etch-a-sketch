@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.grid{
+    width: 30px;
+    height: 30px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: center;
+}
