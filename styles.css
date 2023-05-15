@@ -1,9 +1,11 @@
+
 .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1em;
+    width: 700px;
+    height: 700px;
+    display: grid;
+    margin: 2rem;
+    border: 2px solid burlywood;
+ 
 }
 .grid{
     width: 30px;
@@ -11,4 +13,5 @@
     padding: 1em;
     border: 1px solid #ddd;
     text-align: center;
+    
 }
