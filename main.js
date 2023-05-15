@@ -5,9 +5,15 @@ function makeGrid(rows,cols){
         const grid = document.createElement('div');
             grid.classList.add('grid')  
             container.appendChild(grid);
+            grid.addEventListener('mouseover',()=>{
+                grid.style.background = 'hsla(97, 100%, 78%, 1)'
+            })
     }
+    
 }
+
 makeGrid(16,16)
+
 
 
 
