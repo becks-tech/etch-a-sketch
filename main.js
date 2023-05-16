@@ -1,17 +1,30 @@
 const container = document.querySelector('.container');
-const newSketch = document.querySelector('.new')
-const reset = document.querySelector('.reset')
+const newBtn = document.querySelector('.new')
 
-function createGrid(rows,cols){
-    container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
-    container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
-    for(let i = 0; i< rows * cols; i++){
+
+function createGrid(number){
+
+    container.style.gridTemplateRows = `repeat(${number}, 1fr)`;
+    container.style.gridTemplateColumns = `repeat(${number}, 1fr)`;
+
+    for(let i = 0; i< number * number; i++){
         let grid = document.createElement('div'); 
             container.appendChild(grid);
-            grid.style.border = '1px solid gray'
+            grid.style.border = '1px solid lightgray'
+            
+            //sketch function
             grid.addEventListener('mouseover',()=>{
                 grid.style.background = 'hsla(97, 100%, 78%, 1)'
             })
     }
+    
 }
-createGrid(64,64)
+createGrid(16)
+
+function newSketch(){
+    let userInput = prompt('Enter canvas size, 0 - 100:');
+    createGrid(userInput)
+
+}
+
+newBtn.addEventListener('click',newSketch)
