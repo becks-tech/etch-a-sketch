@@ -1,6 +1,6 @@
 const container = document.querySelector('.container');
 const newBtn = document.querySelector('.new')
-
+const clear = document.querySelector('.clear')
 
 function createGrid(number){
 
@@ -21,9 +21,24 @@ function createGrid(number){
 }
 createGrid(16)
 
+clear.addEventListener('click', ()=>{
+    //clear grid
+    container.childNodes.forEach((child)=>
+    child.style.background="white"
+    )
+})
+
 function newSketch(){
+    container.textContent = ''
     let userInput = prompt('Enter canvas size, 0 - 100:');
-    createGrid(userInput)
+    if (userInput > 100 || userInput < 0){
+        alert("Invalid number. Please choose a number from 0 to 100")
+    }
+    while (userInput > 0 && userInput <= 100){
+        createGrid(userInput)
+        break;
+    }
+    
     //need to reset the grid, not add more to existing each time 'new' is clicked
 }
 
