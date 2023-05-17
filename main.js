@@ -12,7 +12,7 @@ function createGrid(number){
             container.appendChild(grid);
             grid.style.border = '0.2px solid maroon'
             
-            //sketch function
+            //sketch function, need to add random colors
             grid.addEventListener('mouseover',()=>{
                 grid.style.background = 'black'
             })
@@ -39,7 +39,6 @@ function newSketch(){
         break;
     }
     
-    //need to reset the grid, not add more to existing each time 'new' is clicked
 }
 
 newBtn.addEventListener('click',newSketch)
