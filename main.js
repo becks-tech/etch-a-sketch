@@ -14,7 +14,7 @@ function createGrid(number){
             
             //sketch function, need to add random colors
             grid.addEventListener('mouseover',()=>{
-                grid.style.background = 'black'
+                grid.style.background = 'magenta'
             })
     }
     
