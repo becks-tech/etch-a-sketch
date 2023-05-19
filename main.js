@@ -22,7 +22,12 @@ function createGrid(number){
                     //is assigned to element in hexArray and appended to hexColor
                     hexColor += hexArray[generateRandomColor()];
                 }
-                grid.style.background = hexColor;
+                if(i % 5 === 0){
+                    grid.style.background = 'black';
+                } else{
+                    grid.style.background = hexColor;
+                }
+                
             })
     }
     
