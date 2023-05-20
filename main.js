@@ -3,6 +3,8 @@ const newBtn = document.querySelector('.new')
 const clear = document.querySelector('.clear')
 const hexArray = [0,1,2,3,4,5,6,7,8,9, 'A', 'B', 'C', 'D', 'E', 'F'] 
 
+const buttons = document.querySelectorAll('button');
+
 function createGrid(number){
 
     container.style.gridTemplateRows = `repeat(${number}, 1fr)`;
@@ -11,28 +13,40 @@ function createGrid(number){
     for(let i = 0; i< number * number; i++){
         let grid = document.createElement('div'); 
             container.appendChild(grid);
-            grid.style.border = '0.2px solid maroon'
             
             //sketch function, need to add random colors
-            grid.addEventListener('mouseover',()=>{
-                let hexColor = '#';
-                for(let i = 0; i< 6; i++){
-                    //bracket notation object[expression] arrays are objects, evaluates to 
-                    //hexArray[generateRandomNumber()] and returns random number which then 
-                    //is assigned to element in hexArray and appended to hexColor
-                    hexColor += hexArray[generateRandomColor()];
-                }
-                if(i % 5 === 0){
-                    grid.style.background = 'black';
-                } else{
-                    grid.style.background = hexColor;
-                }
-                
+            buttons.forEach(button =>{
+                button.addEventListener('click', ()=>{
+                    if(button.value == 'rainbow'){
+                        grid.addEventListener('mouseover',()=>{
+                            let hexColor = '#';
+                            for(let i = 0; i< 6; i++){
+                                //bracket notation object[expression] arrays are objects, evaluates to 
+                                //hexArray[generateRandomNumber()] and returns random number which then 
+                                //is assigned to element in hexArray and appended to hexColor
+                                hexColor += hexArray[generateRandomColor()];
+                            }
+                             grid.style.background = hexColor;
+                        })
+                    }
+                    else if(button.value == 'black'){
+                        grid.addEventListener('mouseover',()=>{
+                            grid.style.background = 'black';
+                        } )
+                    }
+                    else if (button.value == 'erase'){
+                        grid.addEventListener('mouseover', ()=>{
+                            grid.style.background = 'white';
+                        })
+                        
+                    }
+                })
             })
     }
     
 }
 createGrid(16)
+
 
 clear.addEventListener('click', ()=>{
     //clear grid
