@@ -2,4 +2,6 @@
 Welcome to my Etch-A-Sketch!
 
 ## To use
-Simply use the cursor to draw annything you like. There are also buttons for you to choose which color you want to draw with.
+1 Pick a color
+2 Use the cursor to draw annything you like
+3 Have fun!
