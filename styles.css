@@ -7,3 +7,6 @@
     border: 2px solid papayawhip;
     
 }
+input:focus{
+    background-color: blueviolet;
+}
