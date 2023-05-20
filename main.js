@@ -1,9 +1,10 @@
 const container = document.querySelector('.container');
 const newBtn = document.querySelector('.new')
 const clear = document.querySelector('.clear')
+const picker = document.querySelector('.picker')
 const hexArray = [0,1,2,3,4,5,6,7,8,9, 'A', 'B', 'C', 'D', 'E', 'F'] 
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('input');
 
 function createGrid(number){
 
@@ -17,7 +18,7 @@ function createGrid(number){
             //sketch function, need to add random colors
             buttons.forEach(button =>{
                 button.addEventListener('click', ()=>{
-                    if(button.value == 'rainbow'){
+                    if(button.value == 'Rainbow'){
                         grid.addEventListener('mouseover',()=>{
                             let hexColor = '#';
                             for(let i = 0; i< 6; i++){
@@ -29,23 +30,25 @@ function createGrid(number){
                              grid.style.background = hexColor;
                         })
                     }
-                    else if(button.value == 'black'){
-                        grid.addEventListener('mouseover',()=>{
-                            grid.style.background = 'black';
-                        } )
-                    }
-                    else if (button.value == 'erase'){
+                    else if (button.value == 'Erase'){
                         grid.addEventListener('mouseover', ()=>{
                             grid.style.background = 'white';
                         })
-                        
+
                     }
+                        picker.addEventListener('change',(e)=>{
+                            grid.addEventListener('mouseover', ()=>{
+                                grid.style.background = e.target.value
+                            })
+                            
+                        })
                 })
             })
     }
     
 }
 createGrid(16)
+
 
 
 clear.addEventListener('click', ()=>{
