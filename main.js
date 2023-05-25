@@ -14,6 +14,10 @@ function createGrid(number){
     for(let i = 0; i< number * number; i++){
         let grid = document.createElement('div'); 
             container.appendChild(grid);
+
+            grid.addEventListener('mouseover',()=>{
+                grid.style.background = 'black';
+            })
             
             //sketch function, need to add random colors
             buttons.forEach(button =>{
