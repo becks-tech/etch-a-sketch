@@ -51,7 +51,7 @@ function createGrid(number){
     }
     
 }
-createGrid(16)
+createGrid(32)
 
 
 
