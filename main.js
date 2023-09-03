@@ -81,3 +81,4 @@ function generateRandomColor(){
 
 
 newBtn.addEventListener('click',newSketch)
+
